@@ -10,12 +10,12 @@ spec:
   source:
     repoURL: https://charts.jenkins.io
     chart: jenkins
-    targetRevision: 3.8.9
+    targetRevision: 3.10.3
     helm:
       values: |
         controller:
           image: "jenkins/jenkins"
-          tag: "2.303.3-jdk11"
+          tag: "2.319.2-jdk11"
           javaOpts: "-Xms512m -Xmx512m"
           jenkinsUrl: "https://jenkins-demo.devopsua.tk/"
           installPlugins:
