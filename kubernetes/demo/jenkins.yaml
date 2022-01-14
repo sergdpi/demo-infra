@@ -15,6 +15,7 @@ spec:
       values: |
         controller:
           image: "jenkins/jenkins"
+          tag: "2.303.2-jdk11"
           javaOpts: "-Xms512m -Xmx512m"
           jenkinsUrl: "https://jenkins-demo.devopsua.tk/"
           installPlugins:
