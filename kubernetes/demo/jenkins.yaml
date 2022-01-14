@@ -16,8 +16,6 @@ spec:
         controller:
           image: "jenkins/jenkins"
           tag: "2.303.3-jdk11"
-          admin:
-            existingSecret: "jenkins-admin-user"
           javaOpts: "-Xms512m -Xmx512m"
           jenkinsUrl: "https://jenkins-demo.devopsua.tk/"
           resources:
