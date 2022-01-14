@@ -1,0 +1,22 @@
+#apiVersion: v1
+#kind: PersistentVolume
+#metadata:
+#  name: prometheus-pv
+#spec:
+#  accessModes:
+#  - ReadWriteOnce
+#  capacity:
+#    storage: 256Gi
+#  persistentVolumeReclaimPolicy: Recycle
+#  storageClassName: prometheus
+#  volumeMode: Filesystem
+#  local:
+#    path: /var/opt/prometheus-data
+#  nodeAffinity:
+#    required:
+#      nodeSelectorTerms:
+#      - matchExpressions:
+#        - key: kubernetes.io/hostname
+#          operator: In
+#          values:
+#          - k8s-node-1.devopsua.tk
