@@ -10,20 +10,16 @@ spec:
   source:
     repoURL: https://charts.jenkins.io
     chart: jenkins
-    targetRevision: 3.9.4
+    targetRevision: 3.8.9
     helm:
       values: |
         controller:
           image: "jenkins/jenkins"
-          tag: "2.303.2-jdk11"
+          tag: "2.303.3-jdk11"
           javaOpts: "-Xms512m -Xmx512m"
+          jenkinsOpts: "--sessionTimeout=1440 --sessionEviction=43200"
+          initializeOnce: true  
           jenkinsUrl: "https://jenkins-demo.devopsua.tk/"
-          installPlugins:
-            - configuration-as-code:1.52
-            - git:4.8.2
-            - github:1.34.0
-            - workflow-aggregator:2.6
-            - ssh-agent:1.23
           installLatestPlugins: false
           resources:
             requests:
@@ -37,7 +33,7 @@ spec:
             path: /
             hostName: "jenkins-demo.devopsua.tk"
         agent:
-          enabled: true
+          enabled: false
         persistence:
           existingClaim: jenkins-master-data-pvc
           size: "8Gi"
