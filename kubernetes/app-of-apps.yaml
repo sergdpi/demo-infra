@@ -3,7 +3,6 @@ kind: Application
 metadata:
   name: app-of-apps
   namespace: argocd
-  argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
   source:
