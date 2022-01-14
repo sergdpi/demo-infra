@@ -10,16 +10,15 @@ spec:
   source:
     repoURL: https://charts.jenkins.io
     chart: jenkins
-    targetRevision: 3.8.9
+    targetRevision: 3.9.4
     helm:
       values: |
         controller:
           image: "jenkins/jenkins"
-          tag: "2.303.3-jdk11"
           javaOpts: "-Xms512m -Xmx512m"
           jenkinsUrl: "https://jenkins-demo.devopsua.tk/"
           installPlugins:
-            - configuration-as-code:1.47
+            - configuration-as-code:1.55
           resources:
             requests:
               cpu: "100m"
