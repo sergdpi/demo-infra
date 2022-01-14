@@ -18,7 +18,12 @@ spec:
           javaOpts: "-Xms512m -Xmx512m"
           jenkinsUrl: "https://jenkins-demo.devopsua.tk/"
           installPlugins:
-            - configuration-as-code:1.55
+            - configuration-as-code:1.52
+            - git:4.8.2
+            - github:1.34.0
+            - workflow-aggregator:2.6
+            - ssh-agent:1.23
+          installLatestPlugins: false
           resources:
             requests:
               cpu: "100m"
