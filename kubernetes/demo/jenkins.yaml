@@ -16,6 +16,8 @@ spec:
         controller:
           image: "jenkins/jenkins"
           tag: "2.303.3-jdk11"
+          admin:
+            existingSecret: "jenkins"
           javaOpts: "-Xms512m -Xmx512m"
           jenkinsOpts: "--sessionTimeout=1440 --sessionEviction=43200"
           initializeOnce: true  
