@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.jenkins.io
+    repoURL: https://github.com/sergdpi/helm-charts.git
     targetRevision: HEAD
     path: demo-python-time
     helm:
