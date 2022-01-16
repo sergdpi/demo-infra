@@ -15,10 +15,10 @@ spec:
       values: |
         image:
           repository: "sergdpi/demo-python-time"
-          tag: 20
+          tag: 22
         env:
           MyName: "World"
-          BuildVersion: "Not set"
+          BuildVersion: 22
         resources:
           requests:
             cpu: "10m"
