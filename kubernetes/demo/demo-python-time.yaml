@@ -18,6 +18,7 @@ spec:
           tag: 20
         env:
           MyName: "World"
+          BuildVersion: "Not set"
         resources:
           requests:
             cpu: "10m"
