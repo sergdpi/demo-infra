@@ -15,7 +15,7 @@ spec:
       values: |
         image:
           repository: "sergdpi/demo-python-time"
-          tag: "14"
+          tag: 20
         env:
           MyName: "World"
         resources:
