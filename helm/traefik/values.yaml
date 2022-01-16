@@ -1,0 +1,37 @@
+image:
+  tag: ""
+logs:
+  general:
+    level: INFO
+  access:
+    # To enable access logs
+    enabled: true
+    
+resources:
+   requests:
+     cpu: "10m"
+     memory: "32Mi"
+   limits:
+     cpu: "300m"
+     memory: "150Mi"
+     
+ports:
+  traefik:
+    expose: true
+  web:
+    nodePort: 32080
+  websecure:
+    nodePort: 32443
+    
+ingressRoute:
+  dashboard:
+    enabled: true
+
+service:
+  enabled: true
+  type: NodePort
+
+providers:
+  kubernetesIngress:
+    publishedService:
+      enabled: true
