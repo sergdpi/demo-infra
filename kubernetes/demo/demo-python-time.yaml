@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-python-time
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  project: default
+  source:
+    repoURL: https://charts.jenkins.io
+    targetRevision: HEAD
+    path: demo-python-time
+    helm:
+      values: |
+        image: "sergdpi/demo-python-time"
+        tag: "v0.1.0"
+        env:
+          MyName: "World"
+        resources:
+          requests:
+            cpu: "10m"
+            memory: "32Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        ingress:
+          enabled: true
+          hosts: "demo-python-time.devopsua.tk"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
