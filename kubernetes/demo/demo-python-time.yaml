@@ -14,7 +14,7 @@ spec:
     helm:
       values: |
         image: "sergdpi/demo-python-time"
-        tag: "v0.1.0"
+        tag: 14
         env:
           MyName: "World"
         resources:
