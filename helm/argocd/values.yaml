@@ -1,0 +1,61 @@
+installCRDs: false
+controller:
+  logLevel: debug
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "20m"
+    limits:
+      memory: "1024Mi"
+      cpu: "700m"
+server:
+  logLevel: debug
+  extraArgs:
+    - --insecure
+  ingress:
+    enabled: true
+    hosts:
+      - argocd-demo.devopsua.tk
+  resources:
+    requests:
+      memory: "32Mi"
+      cpu: "10m"
+    limits:
+      memory: "1024Mi"
+      cpu: "700m"
+repoServer:
+  resources:
+    requests:
+      memory: "32Mi"
+      cpu: "10m"
+    limits:
+      memory: "512Mi"
+      cpu: "400m"
+dex:
+  resources:
+    requests:
+      memory: "32Mi"
+      cpu: "10m"
+    limits:
+      memory: "512Mi"
+      cpu: "200m"
+redis:
+  resources:
+    requests:
+      memory: "32Mi"
+      cpu: "10m"
+    limits:
+      memory: "512Mi"
+      cpu: "300m"
+config:
+  url: https://argocd-demo.devopsua.tk.
+  resource.customizations: |
+    networking.k8s.io/Ingress:
+        health.lua: |
+          hs = {}
+          hs.status = "Healthy"
+          return hs
+configs:
+  secret:
+    argocdServerAdminPassword: "$2a$10$QnjaeGBeitbR6jtDFeK7KemojXkdWk/5GSkJrhDqnGlb"
+    argocdServerAdminPasswordMtime: "2006-01-02T15:04:05Z"
