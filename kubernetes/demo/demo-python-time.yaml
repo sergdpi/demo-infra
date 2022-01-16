@@ -13,8 +13,9 @@ spec:
     path: demo-python-time
     helm:
       values: |
-        image: "sergdpi/demo-python-time"
-        tag: 14
+        image:
+          repository: "sergdpi/demo-python-time"
+          tag: "14"
         env:
           MyName: "World"
         resources:
